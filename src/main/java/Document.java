@@ -35,4 +35,9 @@ public class Document {
 		throw new UnsupportedOperationException();
 	}
 
+    public Object getDocumentID() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getDocumentID'");
+    }
+
 }
