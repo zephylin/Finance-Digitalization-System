@@ -14,5 +14,8 @@ public class AccountTest {
         Account account = new Account();
         assertThrows(UnsupportedOperationException.class, 
             () -> account.getDocuments(Date.valueOf("2023-01-01"), Date.valueOf("2023-12-31")));
+
+        // Verify the mock was created (trivial check to include the mock)
+        //assertNotNull(mockDoc);
     }
 }
