@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class DocumentMetadata {
 
 	private String metadataID;
@@ -12,7 +14,7 @@ public class DocumentMetadata {
 	 * 
 	 * @param metadata
 	 */
-	public Boolean updateMetadata(metadataDTO metadata) {
+	public Boolean updateMetadata(String metadata) {
 		// TODO - implement DocumentMetadata.updateMetadata
 		throw new UnsupportedOperationException();
 	}
