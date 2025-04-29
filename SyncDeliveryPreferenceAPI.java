@@ -8,7 +8,7 @@ public class SyncDeliveryPreferenceAPI {
 	 * @param accountNumber
 	 * @param preference
 	 */
-	public Boolean updatePreference(String accountNumber, Enum preference) {
+	public Boolean updatePreference(String accountNumber, String preference) {
 		// TODO - implement SyncDeliveryPreferenceAPI.updatePreference
 		throw new UnsupportedOperationException();
 	}
