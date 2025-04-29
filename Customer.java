@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Customer {
 
 	private String cutomerID;
@@ -30,7 +32,7 @@ public class Customer {
 	 * 
 	 * @param customerData
 	 */
-	public Boolean updateProfile(CustomerDTO customerData) {
+	public Boolean updateProfile(String customerData) {
 		// TODO - implement Customer.updateProfile
 		throw new UnsupportedOperationException();
 	}
