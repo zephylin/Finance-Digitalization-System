@@ -4,6 +4,13 @@ import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AccountTest {
+    // Test if Account has expected fields
+    @Test
+    void accountClass_HasAttributes() throws NoSuchFieldException {
+        Class<?> accountClass = Account.class;
+        assertNotNull(accountClass.getDeclaredField("accountNumber"));
+        assertNotNull(accountClass.getDeclaredField("accountType"));
+    }
     @Test
     void getDocuments_WithMockedDocument() {
         // Mock a Document
@@ -16,6 +23,6 @@ public class AccountTest {
             () -> account.getDocuments(Date.valueOf("2023-01-01"), Date.valueOf("2023-12-31")));
 
         // Verify the mock was created (trivial check to include the mock)
-        //assertNotNull(mockDoc);
+        assertNotNull(mockDoc);
     }
 }
