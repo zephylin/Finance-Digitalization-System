@@ -47,4 +47,9 @@ public class Customer {
         throw new UnsupportedOperationException("Unimplemented method 'getEmail'");
     }
 
+    public void setActive(boolean b) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setActive'");
+    }
+
 }
