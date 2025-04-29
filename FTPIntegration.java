@@ -1,10 +1,13 @@
+import java.util.Date;
+import java.util.List;
+
 public class FTPIntegration {
 
 	private String ftpServer;
 	private String username;
 	private String password;
 	private String remotePath;
-	private Stromg localPath;
+	private String localPath;
 	private Date lastSyncTimestamp;
 
 	public Boolean connectToFTP() {
