@@ -51,36 +51,41 @@ jobs:
     - name: Test with Maven
       run: mvn -B test --file pom.xml
       continue-on-error: true
-    
-    - name: Check if test reports exist
+    - name: List Test Results
       run: |
-        mkdir -p target/surefire-reports
-        echo "Directory contents:"
-        ls -la
-        echo "Target directory contents:"
-        ls -la target/ || echo "No target directory"
-        echo "Surefire reports directory contents:"
-        ls -la target/surefire-reports/ || echo "No surefire-reports directory"
+        echo "Test Results:"
+        ls -la target/surefire-reports/
+        echo "Test Summary:"
+        grep "Tests run:" target/surefire-reports/TEST-*.txt
+#     - name: Check if test reports exist
+#       run: |
+#         mkdir -p target/surefire-reports
+#         echo "Directory contents:"
+#         ls -la
+#         echo "Target directory contents:"
+#         ls -la target/ || echo "No target directory"
+#         echo "Surefire reports directory contents:"
+#         ls -la target/surefire-reports/ || echo "No surefire-reports directory"
         
-        # Create a dummy test result if none exists (for demonstration purposes)
-        if [ ! -f target/surefire-reports/TEST-AccountTest.xml ]; then
-          echo "Creating dummy test result file"
-          mkdir -p target/surefire-reports
-          cat > target/surefire-reports/TEST-AccountTest.xml << 'EOF'
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="AccountTest" time="0.032" tests="2" errors="0" skipped="0" failures="0">
-    <properties>
-        <property name="java.vm.vendor" value="Temurin"/>
-    </properties>
-    <testcase name="testAccountValidation" classname="AccountTest" time="0.015"/>
-    <testcase name="testGetDocuments" classname="AccountTest" time="0.008"/>
-</testsuite>
-EOF
-        fi
+#         # Create a dummy test result if none exists (for demonstration purposes)
+#         if [ ! -f target/surefire-reports/TEST-AccountTest.xml ]; then
+#           echo "Creating dummy test result file"
+#           mkdir -p target/surefire-reports
+#           cat > target/surefire-reports/TEST-AccountTest.xml << 'EOF'
+# <?xml version="1.0" encoding="UTF-8"?>
+# <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="AccountTest" time="0.032" tests="2" errors="0" skipped="0" failures="0">
+#     <properties>
+#         <property name="java.vm.vendor" value="Temurin"/>
+#     </properties>
+#     <testcase name="testAccountValidation" classname="AccountTest" time="0.015"/>
+#     <testcase name="testGetDocuments" classname="AccountTest" time="0.008"/>
+# </testsuite>
+# EOF
+#         fi
     
-    - name: Publish Test Results
-      if: always()
-      uses: EnricoMi/publish-unit-test-result-action@v2
-      with:
-        files: target/surefire-reports/*.xml
-        check_name: "Unit Test Results"
+#     - name: Publish Test Results
+#       if: always()
+#       uses: EnricoMi/publish-unit-test-result-action@v2
+#       with:
+#         files: target/surefire-reports/*.xml
+#         check_name: "Unit Test Results"
