@@ -35,4 +35,19 @@ public class AuditLog {
 		throw new UnsupportedOperationException();
 	}
 
+    public Object getLastAction() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getLastAction'");
+    }
+
+    public Object getUserID() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getUserID'");
+    }
+
+    public Object getResourceID() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getResourceID'");
+    }
+
 }
