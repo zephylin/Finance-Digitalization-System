@@ -1,3 +1,7 @@
+import java.io.File;
+import java.util.Date;
+import java.util.List;
+
 public class Document {
 
 	private String documentID;
