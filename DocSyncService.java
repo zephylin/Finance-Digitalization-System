@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class DocSyncService {
 
 	private Date lastSyncTimestamp;
@@ -9,7 +11,7 @@ public class DocSyncService {
 		throw new UnsupportedOperationException();
 	}
 
-	public StatusDTO getSyncStatus() {
+	public String getSyncStatus() {
 		// TODO - implement DocSyncService.getSyncStatus
 		throw new UnsupportedOperationException();
 	}
